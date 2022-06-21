@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de acomodação:"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/txt_tipo"/>
+
+
+    <CheckBox
+        android:id="@+id/box_hotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_tipo"
+        android:checked="false"
+        android:text="Hotel" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pousada"
+        android:layout_below="@+id/txt_tipo"
+        android:layout_toRightOf="@+id/box_hotel"
+        android:id="@+id/box_pousada"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chalé"
+        android:layout_below="@+id/txt_tipo"
+        android:layout_toRightOf="@+id/box_pousada"
+        android:id="@+id/box_chale"
+    />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/box_chale"
+        android:layout_below="@+id/txt_tipo"
+        android:id="@+id/box_sitio"
+        android:text="Sítio"/>
+
+    <CheckBox
+        android:id="@+id/box_hostel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_tipo"
+        android:layout_toRightOf="@+id/box_sitio"
+        android:text="Hostel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preço da acomodação:"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@id/box_hotel"
+        android:id="@+id/txt_preco"/>
+
+    <com.google.android.material.slider.RangeSlider
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/slide_preco"
+        android:layout_below="@id/txt_preco"
+        android:valueFrom="0.0"
+        android:valueTo="3000.0"
+        android:stepSize="100.0"
+        app:values="@array/initial_slider_values"
+        app:labelBehavior="withinBounds"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de quartos:"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@id/slide_preco"
+        android:id="@+id/txt_quartos"/>
+
+    <com.google.android.material.slider.Slider
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/slide_quartos"
+        android:layout_below="@id/txt_quartos"
+        android:valueFrom="1.0"
+        android:valueTo="10.0"
+        android:stepSize="1.0"
+        app:labelBehavior="withinBounds"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min: 1"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:layout_below="@id/slide_quartos"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/txt_minQuartos"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max: "
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:layout_below="@id/slide_quartos"
+        android:layout_alignParentRight="true"
+        android:id="@+id/txt_maxQuartos"/>
+
+</RelativeLayout>
